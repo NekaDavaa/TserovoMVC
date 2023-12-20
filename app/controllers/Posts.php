@@ -4,7 +4,7 @@ class Posts extends Controller {
 	}
 	
 	public function index(){
-       $this->view('posts/myview');
+       $this->view('posts/myview', ['title' => 'Welcome']);
 	}
 
 	public function myMethod ($id) {
