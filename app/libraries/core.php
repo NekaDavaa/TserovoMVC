@@ -29,8 +29,14 @@ class Core {
       if(isset($url[1])) {
       	if(method_exists($this->currentController, $url[1])) {
       		$this->currentMethod = $url[1];
+          unset($url[1]);
       	}
       }
+     //Params
+      $this->params = $url ? array_values($url) : [];
+      
+      call_user_func([$this->currentController, $this->currentMethod], $this->params);
+
     }
 
 	public function getURL() {
