@@ -1,20 +1,22 @@
 <?php
 class Pages extends Controller {
 public function __construct() {
-	$this->newsModel = $this->model('Post');
+
 }
 
 public function index() {
- $this->view('pages/index');
+ $data = [
+   'title' => 'Welcome Homepage'
+ ];
+ $this->view('pages/index', $data);
+}
+public function about() {
+ $data = [
+   'title' => 'About Us'
+ ];
+ $this->view('pages/about', $data);
 }
 
-public function news() {
- $news = $this->newsModel->getNews();
- $data = [
-    'title' => 'News',
-    'news' => $news
- ];
- $this->view('pages/news', $data);
-}
+
 
 }

@@ -1,3 +1,3 @@
 <?php require HEADER; ?>
-<h1>So happy with my view</h1>
+  <h1><?php echo $data['title']; ?></h1>
 <?php require FOOTER; ?>
